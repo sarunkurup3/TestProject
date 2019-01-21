@@ -1,0 +1,167 @@
+<STYLE>
+    BODY, TABLE, TD, TH, P {
+        font-family: Verdana, Helvetica, sans serif;
+        font-size: 11px;
+        color: black;
+    }
+
+    h1 {
+        color: black;
+    }
+
+    h2 {
+        color: black;
+    }
+
+    h3 {
+        color: black;
+    }
+
+    TD.bg1 {
+        color: white;
+        background-color: #595959;
+        font-size: 120%
+    }
+
+    TD.bg2 {
+        color: white;
+        background-color: #4040FF;
+        font-size: 110%
+    }
+
+    TD.bg3 {
+        color: white;
+        background-color: #8080FF;
+    }
+
+    TD.test_passed {
+        color: #ccc;
+    }
+
+    TD.test_failed {
+        color: red;
+    }
+
+    TD.console {
+        font-family: Courier New, Lucida Console;
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px; /* Height of the footer */
+        background: ghostwhite;
+    }
+
+</STYLE>
+<BODY>
+<TABLE>
+
+    <TR>
+        <TD align="left">
+            <IMG SRC="http://mybuild:8080/static/f0a114d5/images/headshot.png"/>
+        </TD>
+        <TD valign="center"><B style="font-size: 200%;">Jenkins Build Results</B></TD>
+    </TR>
+    <TR>
+        <TD>URL</TD>
+        <TD><A href="${BUILD_URL}">${JOB_NAME}</A></TD>
+    </TR>
+    <TR>
+        <TD>JOB NAME:</TD>
+        <TD>${JOB_NAME}</TD>
+    </TR>
+    <TR>
+        <TD>BUILD STATUS:</TD>
+        <TD><FONT COLOR=#04B431 FACE="Geneva, Arial" STYLE="text-transform: uppercase;"><B>${BUILD_STATUS}!!</B></FONT></TD>
+    </TR>
+    <TR>
+        <TD>BUILD-NUMBER:</TD>
+        <TD>${BUILD_DISPLAY_NAME}</TD>
+    </TR>
+    <TR>
+        <TD>DATE/TIME:</TD>
+        <TD>${BUILD_TIMESTAMP}</TD>
+    </TR>
+
+</TABLE>
+<BR/>
+<BR/>
+<BR/>
+
+<TABLE width="100%">
+    <TR>
+        <TD class="bg1"><B>TEST EVIDENCE PATH:</B></TD>
+    </TR>
+	<TR width="70%">
+        <TD BGCOLOR="#FFFFFF"><FONT COLOR=#0099CC FACE="Geneva, Arial" SIZE=2><a href="\\tasman41\sqa\2018\JenkinsRun\Smoke\${BUILD_NUMBER}\report.html" target="_blank">\\tasman41\sqa\2018\JenkinsRun\Smoke\${BUILD_NUMBER}\report.html</a></font></td>
+    </TR>
+</TABLE>
+<BR/>
+
+<!-- JUnit TEMPLATE -->
+<!-- ARTIFACTS -->
+<TABLE width="100%">
+    <TR>
+        <TD class="bg1"><B>TEST EXECUTION RESULTS</B></TD>
+    </TR>
+    </TR>
+</TABLE>
+<BR/>
+
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=2 Width="100%">
+    <TR>
+        <TD BGCOLOR="#0099CC" width="20%" height="30px"><FONT COLOR=White FACE="Geneva, Arial" SIZE=2> Total</font></td>
+        <TD BGCOLOR="#FFFFFF"><FONT COLOR=#0099CC FACE="Geneva, Arial" SIZE=2>${TEST_COUNTS,var="total"}</font></td>
+    </TR>
+</TABLE>
+
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=2 Width="100%">
+    <TR>
+        <TD BGCOLOR="#04B431" width="20%"><FONT COLOR=white FACE="Geneva, Arial" SIZE=2> Pass</font></td>
+        <TD BGCOLOR="#FFFFFF"><FONT COLOR=#04B431 FACE="Geneva, Arial" SIZE=2>${TEST_COUNTS,var="pass"}</font></td>
+    </TR>
+</TABLE>
+
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=2 Width="100%">
+    <TR>
+        <TD BGCOLOR="#DF3A01" width="20%"><FONT COLOR=white FACE="Geneva, Arial" SIZE=2> Fail</font></td>
+        <TD BGCOLOR="#FFFFFF"><FONT COLOR=#DF3A01 FACE="Geneva, Arial" SIZE=2>${TEST_COUNTS,var="fail"}</font></td>
+    </TR>
+</TABLE>
+
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=2 Width="100%">
+    <TR>
+        <TD BGCOLOR="#e6e600" width="20%"><FONT COLOR=white FACE="Geneva, Arial" SIZE=2> Skip</font></td>
+        <TD BGCOLOR="#FFFFFF"><FONT COLOR=#A4A4A4 FACE="Geneva, Arial" SIZE=2>${TEST_COUNTS,var="skip"}</font></td>
+    </TR>
+</TABLE>
+<br/>
+
+<br/>
+<TABLE BORDER=0 CELLSPACING=2 CELLPADDING=2 Width="100%">
+    <TR BGCOLOR="#989898" width="70%">
+        <td><FONT COLOR=White FACE="Geneva, Arial" SIZE=2>View Current Test Report</font></td>
+    </TR>
+    <TR width="70%">
+        <td><FONT FACE="Geneva, Arial" SIZE=2><a href="${JOB_URL}lastBuild/TestNg_HTML_Report/">Click here to
+            view</a></font>
+        </td>
+    </TR>
+</TABLE>
+<br/>
+
+<div id="footer">
+    This is auto-generated email. Please visit jenkins to see full logs &amp; execution details - <a href="${BUILD_URL}">Link</a><br/>
+    <div>&copy;2018
+        <script type="text/javascript">new Date().getFullYear()>2018 && document.write("-"+new Date().getFullYear());</script>
+        SVB Financial Group. All rights reserved. Silicon Valley Bank is a member of the FDIC and the
+        Federal Reserve System. Silicon Valley Bank is the California bank subsidiary of SVB Financial Group (Nasdaq:
+        SIVB). SVB, SVB FINANCIAL GROUP, SILICON VALLEY BANK, MAKE NEXT HAPPEN NOW and the chevron device are trademarks
+        of SVB Financial Group, used under license.
+    </div>
+</div>
+<br/>
+</body>
+</html>
